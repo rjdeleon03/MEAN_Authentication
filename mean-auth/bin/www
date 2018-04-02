@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var app = require("../app");
+var http = require("http");
+var debug = require("debug")("mean-secure: server");
+
+var portNumber = process.env.PORT || 3000;
+
+var server = http.createServer(app);
+
+server.listen(portNumber, onListening);
+
+function onListening() {
+    console.log("Listening to port: " + portNumber);
+}
