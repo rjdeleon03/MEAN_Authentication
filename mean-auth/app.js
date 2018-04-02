@@ -17,4 +17,7 @@ app.use("/", express.static(angularPath));
 
 app.use("/api", apiRouter);
 
+// Always serve angular page for other (erroneous) paths
+app.use("*", express.static(angularPath));
+
 module.exports = app;
